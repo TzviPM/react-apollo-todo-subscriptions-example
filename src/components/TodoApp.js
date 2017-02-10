@@ -121,7 +121,7 @@ const toggleTodoMutation = gql`
 
 const allTodoesQuery = gql`
   query allTodoes {
-    allTodoes {
+    allTodoes(orderBy: createdAt_ASC) {
       id
       complete
       text
