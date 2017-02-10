@@ -51,11 +51,11 @@ class TodoApp extends Component {
           const newTodo = subscriptionData.data.createTodo;
 
           return {
-            allPosts: [
+            allTodoes: [
+              ...previousState.allTodoes,
               {
                 ...newTodo
-              },
-              ...previousState.allTodoes
+              }
             ]
           }
         },
@@ -121,7 +121,7 @@ const toggleTodoMutation = gql`
 
 const allTodoesQuery = gql`
   query allTodoes {
-    allTodoes {
+    allTodoes(orderBy: createdAt_ASC) {
       id
       complete
       text

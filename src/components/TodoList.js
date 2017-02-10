@@ -26,7 +26,6 @@ export default class TodoList extends React.Component {
     }
     return this.props.todos
       .filter(this._filterTodos)
-      .reverse()
       .map((todo) =>
         <Todo
           key={todo.id}
