@@ -51,11 +51,11 @@ class TodoApp extends Component {
           const newTodo = subscriptionData.data.createTodo;
 
           return {
-            allPosts: [
+            allTodoes: [
+              ...previousState.allTodoes,
               {
                 ...newTodo
-              },
-              ...previousState.allTodoes
+              }
             ]
           }
         },
